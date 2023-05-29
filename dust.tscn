@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvhd7citlwoji"]
+
+[ext_resource type="Script" path="res://dust.gd" id="1_0g0my"]
+
+[sub_resource type="Curve" id="Curve_fnlxc"]
+_data = [Vector2(0, 0.981818), 0.0, -2.35232, 0, 0, Vector2(1, 0), -0.148594, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6ue4u"]
+curve = SubResource("Curve_fnlxc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aa5yd"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+damping_min = 41.38
+damping_max = 41.38
+scale_min = 0.17
+scale_max = 0.8
+scale_curve = SubResource("CurveTexture_6ue4u")
+
+[sub_resource type="SphereMesh" id="SphereMesh_n8qvg"]
+radius = 0.1
+height = 0.2
+radial_segments = 16
+
+[node name="Dust" type="GPUParticles3D"]
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 0.95
+visibility_aabb = AABB(-4, -4, -0.201214, 8, 8, 0.402428)
+process_material = SubResource("ParticleProcessMaterial_aa5yd")
+draw_pass_1 = SubResource("SphereMesh_n8qvg")
+script = ExtResource("1_0g0my")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

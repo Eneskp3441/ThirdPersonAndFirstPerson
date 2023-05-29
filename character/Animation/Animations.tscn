@@ -1,0 +1,31 @@
+[gd_scene load_steps=12 format=3 uid="uid://ydcsnwaaq4bq"]
+
+[ext_resource type="Animation" uid="uid://dlq5xv2rbw0u6" path="res://Characters/Kaya/Animations/ChrouchIdle.res" id="1_d3s7t"]
+[ext_resource type="Animation" uid="uid://clahqhb5bgt0f" path="res://Characters/Kaya/Animations/ChrouchToStand.res" id="2_1p38o"]
+[ext_resource type="Animation" uid="uid://vm10u1ckxd8t" path="res://Characters/Kaya/Animations/ChrouchWalk.res" id="3_a8o2g"]
+[ext_resource type="Animation" uid="uid://d3lhkvq0ug24p" path="res://Characters/Kaya/Animations/FallIdle.res" id="4_obqj7"]
+[ext_resource type="Animation" uid="uid://6odwmoso012y" path="res://Characters/Kaya/Animations/Idle.res" id="5_7fotv"]
+[ext_resource type="Animation" uid="uid://dsg112qfp0reo" path="res://Characters/Kaya/Animations/JumpDown.res" id="6_tjold"]
+[ext_resource type="Animation" uid="uid://ctc8dd4bhm7qs" path="res://Characters/Kaya/Animations/JumpUp.res" id="7_6qj3a"]
+[ext_resource type="Animation" uid="uid://b8ww1x8rujjch" path="res://Characters/Kaya/Animations/Running.res" id="8_kh3hv"]
+[ext_resource type="Animation" uid="uid://u5jpsmsgqbqt" path="res://Characters/Kaya/Animations/StandToChrouch.res" id="9_djk6q"]
+[ext_resource type="Animation" uid="uid://bftj4xqnmsv50" path="res://Characters/Kaya/Animations/Walking.res" id="10_ot1ph"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3jyt"]
+_data = {
+"ChrouchIdle": ExtResource("1_d3s7t"),
+"ChrouchToStand": ExtResource("2_1p38o"),
+"ChrouchWalk": ExtResource("3_a8o2g"),
+"FallIdle": ExtResource("4_obqj7"),
+"Idle": ExtResource("5_7fotv"),
+"JumpDown": ExtResource("6_tjold"),
+"JumpUp": ExtResource("7_6qj3a"),
+"Running": ExtResource("8_kh3hv"),
+"StandToChrouch": ExtResource("9_djk6q"),
+"Walking": ExtResource("10_ot1ph")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_l3jyt")
+}
